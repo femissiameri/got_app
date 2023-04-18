@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:got_app/ui/screens/home_screen.dart';
+import 'package:got_app/config/config.dart';
+import 'package:got_app/ui/screens/screens.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const GotApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class GotApp extends StatelessWidget {
+  const GotApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      onGenerateRoute: AppRouter.onGenerateRoute,
+      initialRoute: HomeScreen.routeName,
     );
   }
 }
